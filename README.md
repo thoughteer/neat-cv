@@ -35,4 +35,4 @@ $ make language=russian
 My actual CV given in `cv.tex` and `publications.bib` may serve as a good
 starting point for your own one. Good luck!
 
-![CV](http://bitbucket.org/thoughteer/tidy-cv/raw/master/cv.png)
+![CV](cv.png)
