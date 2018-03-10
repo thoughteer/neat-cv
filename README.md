@@ -36,3 +36,11 @@ My actual CV given in `cv.tex` and `publications.bib` may serve as a good
 starting point for your own one. Good luck!
 
 ![CV](cv.png)
+
+
+# NEW
+
+docker build -t tidy-cv .
+
+docker run -v $(pwd)/artifacts:/tidycv/artifacts tidycv
+docker run -v $(pwd)/artifacts:/tidycv/artifacts tidycv snapshot

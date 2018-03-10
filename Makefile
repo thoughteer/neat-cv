@@ -1,7 +1,7 @@
 language ?= english
 
-cv.pdf: cv.ps
-	ps2pdf $^
+cv: cv.ps
+	ps2pdf $^ && mv cv.pdf artifacts/
 
 cv.ps: cv.dvi
 	dvips $^
@@ -12,9 +12,6 @@ cv.dvi: cv.tex tidycv.cls publications.bib
 	rm language.tex
 
 snapshot: cv.dvi
-	convert -density 300 $^ -background white -alpha remove -resize 25% -append cv.png
+	gm convert -density 600 $^ +matte -background white -resize 15% -append artifacts/cv.png
 
-clean:
-	rm -f cv.aux cv.bbl cv.bcf cv.blg cv.dvi cv.log cv.out cv.pdf cv.ps cv.run.xml
-
-.PHONY: snapshot clean
+.PHONY: cv snapshot
