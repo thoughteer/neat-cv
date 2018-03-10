@@ -1,6 +1,6 @@
 # Tidy CV
 
-An unsophisticated yet neatly crafted LaTeX class for the CV.
+An unsophisticated yet neatly crafted LaTeX class for the [CV](#example).
 
 ## License
 
@@ -8,39 +8,35 @@ An unsophisticated yet neatly crafted LaTeX class for the CV.
 
 ## Requirements
 
-You can find the list of required packages in `tidycv.cls`.
+All you need is to install [Docker](https://docs.docker.com/install/).
 
 ## Usage
 
-Provided `Makefile` uses the latex-biber-latex-dvips-ps2pdf pipeline to compile
-the document into a PDF (make sure that all of these utilities present in your
-system):
-```console
-$ make
+Clone the repo, edit `cv.tex` and `publications.bib` (if any), then run
+```bash
+docker run -v $(pwd)/artifacts:/tidy-cv/artifacts thoughteer/tidy-cv
 ```
-It also allows to remove all non-essential files from the directory (be
-very careful with it):
-```console
-$ make clean
+This will produce `artifacts/cv.pdf`.
+
+You can change the target language by passing an additional argument as in
+```bash
+docker run -v $(pwd)/artifacts:/tidy-cv/artifacts thoughteer/tidy-cv language=russian
 ```
-and create a PNG snapshot of the document using ImageMagick:
-```console
-$ make snapshot
-```
-You can change the target language by passing an additional argument:
-```console
-$ make language=russian
+The default language is `english`.
+
+## Customization
+
+#### Color scheme
+
+Just redefine colors in the "Colors" section of the `tidycv.cls` file.
+
+#### Additional LaTeX packages
+
+Add missing Debian packages to the `Dockerfile` file, then run
+```bash
+docker build -t tidy-cv .
 ```
 
-My actual CV given in `cv.tex` and `publications.bib` may serve as a good
-starting point for your own one. Good luck!
+## Example
 
 ![CV](cv.png)
-
-
-# NEW
-
-docker build -t tidy-cv .
-
-docker run -v $(pwd)/artifacts:/tidycv/artifacts tidycv
-docker run -v $(pwd)/artifacts:/tidycv/artifacts tidycv snapshot
