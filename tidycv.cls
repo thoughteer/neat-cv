@@ -19,7 +19,7 @@
 \RequirePackage[backend=biber, sorting=none, autolang=other]{biblatex}
 \RequirePackage[hidelinks]{hyperref}
 
-% Multilanguage support.
+% Multiple language support.
 \newcommand{\cvlanguage}[1]{%
     \expandafter\newcommand\csname cv#1\endcsname[1]{}%
 }
@@ -49,7 +49,7 @@
 \newcommand{\@cvphone}{}
 \newcommand{\cvsetphone}[1]{\renewcommand{\@cvphone}{#1}}
 
-% Phone number setter.
+% E-mail setter.
 \newcommand{\@cvemail}{}
 \newcommand{\cvsetemail}[1]{\renewcommand{\@cvemail}{#1}}
 
