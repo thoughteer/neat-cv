@@ -12,7 +12,7 @@ dvi: cv.tex tidycv.cls publications.bib
 	rm language.tex
 
 snapshot: dvi
-	gm convert -density 600 $^ +matte -background white -resize 15% -append cv.png
+	gm convert -density 600 cv.dvi +matte -background white -resize 15% -append cv.png
 
 clean:
 	rm -f cv.aux cv.bbl cv.bcf cv.blg cv.dvi cv.log cv.out cv.pdf cv.ps cv.run.xml
