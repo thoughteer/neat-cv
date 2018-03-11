@@ -14,15 +14,21 @@ All you need is to install [Docker](https://docs.docker.com/install/).
 
 Clone the repo, edit `cv.tex` and `publications.bib` (if any), then run
 ```bash
-docker run -v $(pwd)/artifacts:/tidy-cv/artifacts thoughteer/tidy-cv
+docker run -v $(pwd):/tidy-cv thoughteer/tidy-cv
 ```
-This will produce `artifacts/cv.pdf`.
+This will produce `cv.pdf`.
 
 You can change the target language by passing an additional argument as in
 ```bash
-docker run -v $(pwd)/artifacts:/tidy-cv/artifacts thoughteer/tidy-cv language=russian
+docker run -v $(pwd):/tidy-cv thoughteer/tidy-cv language=russian
 ```
 The default language is `english`.
+
+To clean up the directory after compilation, run
+```bash
+docker run -v $(pwd):/tidy-cv thoughteer/tidy-cv clean
+```
+Note, this will also remove the PDF.
 
 ## Customization
 

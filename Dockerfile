@@ -2,7 +2,7 @@ FROM debian:stretch
 
 WORKDIR /tidy-cv
 
-ADD . /tidy-cv
+ADD Makefile /tidy-cv
 
 RUN apt-get clean \
     && apt-get update \
