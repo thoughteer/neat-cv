@@ -1,8 +1,6 @@
 FROM debian:stretch
 
-WORKDIR /tidy-cv
-
-ADD Makefile /tidy-cv
+WORKDIR /neat-cv
 
 RUN apt-get clean \
     && apt-get update \
@@ -16,5 +14,7 @@ RUN apt-get clean \
         texlive-fonts-extra \
         texlive-lang-cyrillic \
         texlive-latex-extra
+
+ADD Makefile /neat-cv
 
 ENTRYPOINT ["make"]

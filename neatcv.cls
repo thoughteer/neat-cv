@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{tidycv}[2015/03/20 by Iskander Sitdikov]
+\ProvidesClass{neatcv}[2015/03/20 by Iskander Sitdikov]
 
 \LoadClass[a4paper, 12pt]{article}
 
@@ -60,7 +60,7 @@
 % Colors.
 \definecolor{cvbase}{HTML}{000000}
 \definecolor{cvlow}{HTML}{666666}
-\definecolor{cvhigh}{HTML}{112288}
+\definecolor{cvhigh}{HTML}{772211}
 
 % Color changing command.
 % #1 - name of the color (base, low, or high).

@@ -6,7 +6,7 @@ pdf: ps
 ps: dvi
 	dvips cv.dvi
 
-dvi: cv.tex tidycv.cls publications.bib
+dvi: cv.tex neatcv.cls publications.bib
 	echo '\\cvsetlanguage{$(language)}' > language.tex
 	latex cv && biber cv && latex cv
 	rm language.tex
