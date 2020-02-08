@@ -45,4 +45,4 @@ docker build -t thoughteer/neat-cv .
 
 ## Example
 
-![CV](cv.png)
+![CV](cv.webp)
