@@ -53,6 +53,10 @@
 \newcommand{\@cvemail}{}
 \newcommand{\cvsetemail}[1]{\renewcommand{\@cvemail}{#1}}
 
+% Crypto identity setter.
+\newcommand{\@cvcryptoid}{}
+\newcommand{\cvsetcryptoid}[1]{\renewcommand{\@cvcryptoid}{#1}}
+
 % Homepage URL setter.
 \newcommand{\@cvhomepage}{}
 \newcommand{\cvsethomepage}[1]{\renewcommand{\@cvhomepage}{#1}}
@@ -70,6 +74,7 @@
 \newcommand{\cvaddressicon}{\Letter}
 \newcommand{\cvphoneicon}{\Telefon}
 \newcommand{\cvemailicon}{\MVAt}
+\newcommand{\cvcryptoidicon}{\YinYang}
 \newcommand{\cvhomepageicon}{\Mundus}
 
 % Lengths.
@@ -104,6 +109,9 @@
 
 % E-mail printing command.
 \newcommand{\cvemail}[1]{\cvurl{#1}{mailto:#1}}
+
+% Crypto identity printing command.
+\newcommand{\cvcryptoid}[1]{\cvurl{#1}{https://app.zerion.io/#1}}
 
 % Generic description environment.
 % #1 - vertical alignment (t [default], c or b).
@@ -160,7 +168,8 @@
         \cvitem{\cvaddressicon}{\@cvaddress}%
         \cvitem{\cvphoneicon}{\@cvphone}%
         \cvitem{\cvemailicon}{\cvemail{\@cvemail}}%
-        \cvitem{\cvhomepageicon}{\cvurl{\@cvhomepage}{\@cvhomepage}}%
+        \cvitem{\cvcryptoidicon}{\cvcryptoid{\@cvcryptoid}}%
+        \cvitem{\cvhomepageicon}{\cvurl{\@cvhomepage}{https://\@cvhomepage}}%
     \end{cvdescription*}%
 }
 \newlength{\@cviconwidth}
