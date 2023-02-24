@@ -64,7 +64,7 @@
 % Colors.
 \definecolor{cvbase}{HTML}{000000}
 \definecolor{cvlow}{HTML}{666666}
-\definecolor{cvhigh}{HTML}{772211}
+\definecolor{cvhigh}{HTML}{330066}
 
 % Color changing command.
 % #1 - name of the color (base, low, or high).
